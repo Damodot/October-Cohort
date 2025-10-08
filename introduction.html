@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="introductio.css">
+</head>
+
+<body>
+    <div class="newDiv" id="newDiv"></div>
+    <h1 id="showName">
+
+
+    </h1>
+</body>
+
+</html>
+<script>
+    const showName = document.getElementById('showName')
+    showName.style.color = 'black'
+    showName.style.textAlign = 'center'
+    // Tags with opeing and closing tags have an attribute called innerHTML
+    
+    let Welcome = 'Welcome to Javascript'
+    showName.innerHTML = Welcome
+    console.log(Welcome);
+    console.log("Welcome");
+    // Grab an h1 tag from your DOM
+    // Decalre a variable and assign your name too it
+    // send your name into the innerHTML of the h1 tag that you grabbed
+    
+    let newClass = 'Javascript'
+    
+    const divFromDOM = document.getElementById("newDiv")
+    console.log(divFromDOM);
+    divFromDOM.style.width = '100px'
+    divFromDOM.style.height = '100px'
+    divFromDOM.style.backgroundColor = 'red'
+    
+    // var let const
+    var thisClass = 'Javascript'
+    console.log(thisClass);
+
+    thisClass = 'Next JS'
+
+
+    let myName = 'Adedotun'
+    console.log(myName);
+
+    const PI = 3.14
+
+    let currentClass = 'Javascript'
+    console.log(currentClass);
+
+    currentClass = 'React'
+    console.log(currentClass);
+
+    const boilingPoint = '100degCel'
+    console.log(boilingPoint);
+
+    // boilingPoint = '20degCel'
+    // console.log(boilingPoint);
+
+
+    
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+        }
+
+        section {
+            width: 100dvw;
+            height: 100dvh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: all 0.3s ease;
+
+            main {
+                width: 30%;
+                aspect-ratio: 1 / 1;
+                background-color: red;
+            }
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="moveDiv"></div>
+    <h1 id="displaySentence"></h1>
+    <button onclick="showDiv()">Click Me</button>
+    <button onclick="moveTheDiv()">Move The Div</button>
+    <section id="dropDown">
+        <main>
+            <button onclick="cancelDisplay()">Cancel</button>
+        </main>
+    </section>
+</body>
+
+</html>
+<script>
+    function moveTheDiv() {
+        console.log('Hello');
+        const moveDiv = document.getElementById('moveDiv')
+        console.log(moveDiv);
+        moveDiv.style.left = 'calc(100vw - 100px - 15px)'
+        moveDiv.style.transition = 'all 0.5s ease'
+    }
+    function showDiv() {
+        let dropDown = document.getElementById('dropDown')
+        dropDown.style.transform = 'translateY(0)'
+    }
+
+    function cancelDisplay() {
+        let dropDown = document.getElementById('dropDown')
+        dropDown.style.transform = 'translateY(-100%)'
+    }
+    const display = document.getElementById('displaySentence')
+    console.log(display);
+
+    let userName = 'Dotun'
+
+    display.innerHTML = userName
+
+</script>

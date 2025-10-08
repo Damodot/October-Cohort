@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputTag">
+    <button onclick="showInput()">Click Me</button>
+    <h1 id="displayInput"></h1>
+</body>
+
+</html>
+<script>
+    // Primitive Data Types
+    // You cannot make changes to any individual element of a primitive data type
+    // String, Numbers, Null, Undefined, Symbols
+    let thisClass = 'Web Development'
+    console.log(thisClass[3]);
+    thisClass[0] = 'A'
+    console.log(thisClass);
+
+
+
+    // Non-Primitive Data Types
+    // You can make changes to any individual element of a primitive data type
+    // Array, Objects
+    let arr = ['Web Development', 'Data Science', 'Cyber Security', 'UI/UX Design']
+    console.log(arr[0]);
+    arr[0] = 'Mobile Development'
+    console.log(arr);
+
+
+
+
+    // Strings
+    let string1 = 'Hello Everybody'
+    let string2 = "Hello Guys"
+    let string3 = `Are you guys getting JS`
+
+    let sentence = "Js is making sense, ain't it"
+    let newSentence = 'I love these programming language; "Python", "Js" and "C#"'
+
+    function showInput() {
+        let inputTag = document.getElementById('inputTag')
+        console.log(inputTag.value);
+        console.log(inputTag.value.trim().toLowerCase().includes('shit'))
+        
+        const displayInput = document.getElementById('displayInput')
+        displayInput.innerHTML = inputTag.value.trim().toUpperCase().replace('SHIT', 'S**T')
+        // Give h1 tag an id
+        // Create a variable
+        // Save the h1 tag in the variable
+        // Send inputTag.value into the innerHTML of the h1Tag
+    }
+
+    // String Methods
+    // length 
+
+    let className = '    Javascript is so fun. sHit   '
+    console.log(className.length);
+    console.log(className[0]);
+
+    // Accessing the last character in a string
+    console.log(className[className.length - 1]);
+
+    // UpperCase
+    console.log(className.toUpperCase());
+
+    // Lowercase
+    console.log(className.toLowerCase());
+    
+    // trim
+    console.log(className.trim());
+
+    // includes
+    console.log(className.toLowerCase().includes('shit'));
+
+    // replace 
+    console.log(className.toLowerCase().replace('shit', 'S**T'));
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+</script>
