@@ -11,6 +11,11 @@
     <input type="text" id="inputTag">
     <button onclick="showInput()">Click Me</button>
     <h1 id="displayInput"></h1>
+    <h1 id="showName"></h1>
+
+    <input type="text" id="grabInput">
+    <button onclick="displayInput()">Click Me Again</button>
+    <h1 id="displayName"></h1>
 </body>
 
 </html>
@@ -48,13 +53,14 @@
         let inputTag = document.getElementById('inputTag')
         console.log(inputTag.value);
         console.log(inputTag.value.trim().toLowerCase().includes('shit'))
-        
+
         const displayInput = document.getElementById('displayInput')
-        displayInput.innerHTML = inputTag.value.trim().toUpperCase().replace('SHIT', 'S**T')
-        // Give h1 tag an id
-        // Create a variable
-        // Save the h1 tag in the variable
-        // Send inputTag.value into the innerHTML of the h1Tag
+        // how are you
+        console.log(inputTag.value.trim()[0]);
+
+        displayInput.innerHTML = inputTag.value.trim().replace(inputTag.value.trim()[0], inputTag.value.trim()[0].toUpperCase())
+        // Concatenate what is on index 0 of inputTag.value.trim()(turn this to uppercase)
+        // with the sliced values of inputTag.value.trim() from index 1 down till the end (turn these to lowercase)
     }
 
     // String Methods
@@ -72,7 +78,7 @@
 
     // Lowercase
     console.log(className.toLowerCase());
-    
+
     // trim
     console.log(className.trim());
 
@@ -81,12 +87,89 @@
 
     // replace 
     console.log(className.toLowerCase().replace('shit', 'S**T'));
+
+    // replaceAll, slice, split, interpolation, concatenation, indexOf, search, repeat, startsWith, endsWith
+
+    // replaceAll
+
+    let newString = 'Javascript'
+    console.log(newString.replaceAll('a', 'u'));
+
+    // startsWith
+    console.log(newString.toLowerCase().startsWith('javascript'));
+
+    // endsWith
+    console.log(newString.endsWith('Javascript'));
+
+    // repeat
+    let repeatWord = 'Hello'
+    console.log(repeatWord.repeat(10));
+
+    // indexOf
+    let mySentence = 'Hello Everybody'
+
+    console.log(mySentence.indexOf('z'));
+
+    // lastIndexOf
+    console.log(mySentence.lastIndexOf('z'));
+
+    // search
+    let latest = 'I love JS so much, Mr. Wiz made me love it'
+    console.log(latest.search('lovee'));
+
+    // concatenation
+    let firstName = 'Adedeji'
+    let lastName = 'Adedotun'
+
+    console.log(firstName.concat(' ', lastName, ' ', 'Anthony'));
+    console.log(firstName + ' ' + lastName);
+    const showName = document.getElementById('showName')
+    showName.innerHTML = firstName + ' ' + lastName
+
+    // Interpolation
+    let nextClass = 'Electron JS'
+    console.log(`I am finishing JS soon and I am graduating to ${nextClass}`);
+
+    console.log(`My full name is ${firstName} ${lastName}`);
+
+
+    // Function to display Name
+    function displayInput() {
+        const displayName = document.getElementById('displayName') // h1tag
+        const grabInput = document.getElementById('grabInput') // input tag
+
+        displayName.innerHTML = `My name is ${grabInput.value.trim()}`
+
+        // Create an Input and One Button
+        // Create an h1 tag
+        // Give the button an onclick event and attach a function to it
+        // Create the function
+        // Grab the h1 tag in the function
+        // Grab the value inside the input also
+        // Send the value as a sentence into the innerhtml of an H1 tag
+        // HINT: Interpolate the input.value
+    }
+
+
+    // slice
+    let ourClass = 'Javascript Class is so fun'
+    console.log(ourClass.slice(0, 10));
+    console.log(ourClass.slice(0, 1));
+    console.log(ourClass[0]);
+    console.log(ourClass.slice(0));
+
+    // split
+    console.log(ourClass.split(''));
     
     
     
     
     
-    
+
+
+
+
+
 
 
 
