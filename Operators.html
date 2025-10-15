@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="subtract()">-</button>
+    <span id="quantity"></span>
+    <button onclick="addnum()">+</button>
+</body>
+
+</html>
+<script>
+    // Assignment Operator
+    let thisClass = 'Javascript'
+
+    thisClass += ' Class'
+    console.log(thisClass);
+
+    // += for strings and Numbers
+    let a = 10
+
+    a += 30
+
+    console.log(a);
+
+    // -=, *=, /= for Numbers alone
+    let b = 30
+
+    b -= 20
+
+    console.log(b);
+
+    let c = 5
+
+    c *= 10
+
+    console.log(c);
+
+    let d = 10
+
+    d /= 2
+
+    console.log(d);
+
+    // Increment and Decreament Operator works with a number
+    // Increment
+    let int = 0
+    console.log(int++); // Post Increment
+    console.log(int);
+
+    console.log(++int); // Pre Increment 
+    console.log(int);
+
+    // Decreament
+    let num = 1
+    console.log(num--); // Post Decreament
+    console.log(num);
+
+    console.log(--num); // Pre Decreament
+    console.log(num);
+
+    let quantity = document.getElementById('quantity')
+    let index = 1
+    quantity.innerHTML = index
+    function subtract() {
+        quantity.innerHTML = --index
+    }
+
+    function addnum() {
+        quantity.innerHTML = ++index
+    }
+
+
+    // Booleans
+    let bool = true
+    let newBool = false
+
+    // Comparism Operator
+    let state = 4 > 3
+    console.log(state);
+    console.log(3 > 4);
+    console.log(4 >= 4);
+    console.log(4 < 4);
+    console.log(3 <= 4);
+    console.log(4 == 4);
+    let newNum = 5
+    let newNum2 = 5
+    console.log(newNum == newNum2);
+    console.log(5 == '5');
+    console.log(5 === '5');
+    console.log(1 == '5');
+    console.log(0 == false);
+    console.log(+false);
+    console.log(1 == true);
+    console.log(+true);
+    console.log("" == 0);
+    console.log(+'');
+    console.log(4 != 4);
+    console.log(4 != '4');
+    console.log(3 !== '4');
+
+    // Logical Operators
+    // OR Operator
+    let logOpe = false || false || false
+
+    console.log(0 == '' || 0 === false);
+    console.log('Hello'.includes('hell') || 1 != true);
+    console.log('Hello'.toLowerCase().includes('hell ') || undefined != false);
+    console.log(NaN == NaN);
+    console.log(!true || !(4 !== '4'));
+    console.log(!(typeof 'Laide' === 'string') || !(NaN != NaN));
+
+    // AND Operator
+    let andOpe = true && true && false
+
+    console.log(0 == '' && 0 === false);
+    console.log(!(!(4 !== '4')) && 1 != true);
+    console.log(!(typeof 10 !== 'number') && undefined != false);
+    console.log(!(0 !== undefined) && !(4 !== '4'));
+    console.log(!(typeof 'Tunde' === 'StrIng '.toLowerCase()) && !(0 != undefined));
+    console.log(!(!(true !== 1)) && 'hello   '.trim().endsWith('hello   '));
+
+    // Tenary Operators
+    // Truthy Values
+    // All strings with characters in them except empty string
+    // The Boolean True
+    // All numbers except 0
+
+    // Falsy Values
+    // Empty String
+    // The boolean False
+    // 0 itself 
+    // undefined
+    // null
+
+    let isRaining = ''
+    let variable2 = ''
+    let variable3 = ''
+    !isRaining || !variable2 || !variable3 ?
+        console.log('Na True') :
+        console.log('Na Lie')
+
+
+    // Arithmetic Operators
+    // +, -, /, *, %
+    console.log(4 + 4);
+    console.log('Hello' + ' Guys');
+
+    console.log(8 - 4);
+    console.log(8 / 2);
+    console.log(2 * 2);
+    console.log(+'15' % 4);
+
+    // Create one input and one button
+    // Attach an event to the buttoon and give it a function name
+    // Create the function in Javascript
+    // Grab the value of your input inside the function
+    // Turn the value of the input to a number
+    // After turning it to a number, do input.value.trim() % 2
+    // input.value.trim() % 2 === 0
+    // If true then log, it is an even number
+    // if false then log, it is an odd number
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

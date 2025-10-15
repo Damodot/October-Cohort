@@ -138,16 +138,7 @@
         const displayName = document.getElementById('displayName') // h1tag
         const grabInput = document.getElementById('grabInput') // input tag
 
-        displayName.innerHTML = `My name is ${grabInput.value.trim()}`
-
-        // Create an Input and One Button
-        // Create an h1 tag
-        // Give the button an onclick event and attach a function to it
-        // Create the function
-        // Grab the h1 tag in the function
-        // Grab the value inside the input also
-        // Send the value as a sentence into the innerhtml of an H1 tag
-        // HINT: Interpolate the input.value
+        displayName.innerHTML += `My name is ${grabInput.value.trim()}`
     }
 
 
