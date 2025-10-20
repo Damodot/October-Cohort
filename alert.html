@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="login()">Login</button>
+    <button onclick="deleteAccount()">Delete Account</button>
+    <button onclick="changeUsername()">Change Your Name</button>
+    <h1 id="userName"></h1>
+</body>
+
+</html>
+<script>
+    // ALERT METHODS
+    // Alert
+    function login() {
+        let successMessage = 'Login Successful'
+        alert(successMessage)
+    }
+
+    // Confirm
+    function deleteAccount() {
+        let confirmPrompt = confirm('Are you sure you want to delete your account?')
+        console.log(confirmPrompt);
+        if (confirmPrompt) {
+            alert('Your account has been deleted succesfully')
+        }
+    }
+
+    // Prompt
+    let currentUserName = 'Dotun'
+    let nameDisplay = document.getElementById('userName')
+    nameDisplay.innerHTML = `Welcome ${currentUserName}`
+    function changeUsername() {
+        let namePrompt = prompt('What do you want to edit your name to be?', currentUserName)
+        console.log(namePrompt);
+        if (namePrompt.toLowerCase().trim() === currentUserName.toLowerCase() || namePrompt === '') {
+            alert('Please make a valid change to your username')
+        } else {
+            alert('Username changed succesfully')
+            currentUserName = namePrompt.trim()
+            nameDisplay.innerHTML = `Welcome ${currentUserName}`
+        }
+    }
+</script>

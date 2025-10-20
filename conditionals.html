@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="text" id="password">
+    <button onclick="login()">Log in</button>
+</body>
+</html>
+<script>
+    isRaining = false
+    isRaining ? console.log('Go to Class') : console.log('Do not go to class');
+
+    if (true) {
+        console.log('Performing Actioi');
+    } else {
+        console.log('Performin Other Action');
+    }
+    
+    let username = 'Dotun'
+    let email = 'ade@gmail.com'
+    let password = 'sdkhbcl'
+    // if (username === '' || password === '' || email === '') {
+    //     console.log('All fields are mandatory');
+    // } else {
+    //     console.log('Login Successful');
+    // }
+
+
+    // weather autumn, spring, winter, rainy, sunny
+    let weather = 'auTumN'
+    let lowerCaseWeather = weather.toLowerCase().trim()
+    if (lowerCaseWeather === 'autumn') {
+        console.log('We are in the autumn season');
+    } else if (lowerCaseWeather === 'Spring') {
+        console.log('We are in the Spring Season');
+    } else if (lowerCaseWeather === 'Winter') {
+        console.log('We are in the Winter Season');
+    } else if (lowerCaseWeather === 'Rainy') {
+        console.log('We are in the Rainy Season');
+    } else if (lowerCaseWeather === 'Sunny') {
+        console.log('We are in the Sunny Season');
+    } else {
+        console.log('Invalid input, chec list of correct seasons');
+    }
+
+
+
+    function login() {
+        const username = document.getElementById('username')
+        const password = document.getElementById('password')
+        console.log(username.value.trim());
+        console.log(password.value.trim());
+        if (username.value.trim() === '' || password.value.trim() === '') {
+            console.log('All fields are mandatory');
+        } else if (password.value.trim().length < 8) {
+            console.log('Password must be 8 or more');
+        } else {
+            console.log('Login Successful');
+        }
+    }
+
+
+    // if I type 100 - 80 in the iput i should get an output of Your grade is A on the web screen
+    // If i type 70 - 79, then The grade is B
+    // 60-69, Grade is C
+    // 40 - 59, Grade is D
+    // 40 below, You failed
+    // values less than 0 and greater tha 100 should give a reply of Invalid input 
+</script> 
