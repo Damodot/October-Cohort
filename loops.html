@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let arr = ['Laide', 'Justin', 'Micheal', 'Anu', 'Emmanuel', 'Olamide', 'Maam Rekeebat', 'Kenny', 'Quadri', 'Ameen', 'Tunde', 'Gbotemi', 'Ayomide', 'Mr Benjamin', 'Kareem', 'Korede', 'Marvelous']
+
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        console.log(element);
+    }
+
+    let numArr = [1, 3, 4, 2, 5, 6, 7, 8, 9]
+
+    let sum = 0
+    for (let int = 0; int < numArr.length; int++) {
+        const element = numArr[int];
+        sum = sum + element
+    }
+    console.log(sum);
+
+
+
+    for (let index = 1; index <= 8; index++) {
+        console.log(`${index} * ${index} = ${index * index}`);
+    }
+
+    // 2 * 1 = 2
+    // 2 * 2 = 4 
+
+    for (let index = 1; index < 13; index++) {
+        console.log(`2 * ${index} =  ${2 * index}`);
+    }
+
+    // #
+    // ##
+    // ###
+    // ####
+    // #####
+
+    let newArr = ['Laide', 'Justin', 'Micheal', 'Anu', 'Emmanuel', 'Olamide', 'Maam Rekeebat', 'Kenny', 'Quadri', 'Ameen', 'Tunde', 'Gbotemi', 'Ayomide', 'Mr Benjamin', 'Kareem', 'Korede', 'Marvelous']
+    for (let index = 0; index < newArr.length; index++) {
+        const element = newArr[index];
+        if (element.toLowerCase() === 'justin') {
+            // alert('User Exist')
+            break
+        }
+    }
+
+    for (const element of newArr) {
+        console.log(element);
+    }
+
+    // break and Continue
+    for (let index = 0; index < 5; index++) {
+        console.log(index);
+        break
+    }
+
+    for (let index = 0; index < 6; index++) {
+        console.log(index);
+        continue
+    }
+
+    // while loop, do while loop
+    // while
+    let int = 0
+    while (int < 6) {
+        console.log(int);
+        int++
+    }
+
+    // do While
+    let ind = 7
+    do {
+        console.log(ind);
+        ind++
+    } while (ind < 6);
+
+
+
+
+</script>

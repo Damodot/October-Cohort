@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #start,
+        #end {
+            width: 49%;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="p-4 m-auto shadow rounded-4 w-50">
+        <h1 class="text-center fw-bold">Multiplication Table Generator</h1>
+        <div class="d-flex justify-content-between mt-4">
+            <input type="number" placeholder="Enter Start number" id="start" class="form-control">
+            <input type="number" placeholder="Enter End number" id="end" class="form-control">
+        </div>
+        <button class="btn btn-success w-100 py-2 mt-4" onclick="generateTable()">Generate Table</button>
+        <div class="output mt-4"></div>
+    </main>
+</body>
+
+</html>
+<script>
+    function generateTable() {
+        let start = document.querySelector('#start')
+        let end = document.querySelector('#end')
+        let output = document.querySelector('.output')
+        console.log(start.value.trim());
+        console.log(end.value.trim());
+
+        if (!+start.value.trim() || !+end.value.trim() || isNaN(start.value.trim()) || isNaN(end.value.trim())) {
+            alert('Please a valid value from one above')
+        } else {
+            // start = 1
+            // end = 3
+            output.innerHTML = ""
+            if (+start.value.trim() < +end.value.trim()) {
+                for (let int = +start.value.trim(); int <= +end.value.trim(); int++) {
+                    console.log(int);
+                    output.innerHTML += `<h3 class="text-center">${int} Multiplication Table</h3>`
+                    for (let index = 1; index < 13; index++) {
+                        console.log(`${int} * ${index} = ${int * index}`);
+                        output.innerHTML += `<p class="text-center">${int} * ${index} = ${int * index}</p>`
+                    }
+                }
+            } else {
+                // start = 5
+                // end = 2
+                for (let int = +start.value.trim(); int >= +end.value.trim(); int--) {
+                    console.log(int);
+                    output.innerHTML += `<h3 class="text-center">${int} Multiplication Table</h3>`
+                    for (let index = 1; index < 13; index++) {
+                        console.log(`${int} * ${index} = ${int * index}`);
+                        output.innerHTML += `<p class="text-center">${int} * ${index} = ${int * index}</p>`
+                    }
+                }
+            }
+            start.value=''
+            end.value = ''
+        }
+
+    }
+</script>

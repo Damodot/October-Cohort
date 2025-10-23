@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="memberInput">
+    <button onclick="addMember()">Add Member</button>
+    <button onclick="deleteLastMember()">Delete Last Member</button><br><br>
+    <input type="number" id="takeIndex">
+    <button onclick="deleteUser()">Delete User</button>
+
+</body>
+
+</html>
+<script>
+    let memberArray = []
+    function addMember() {
+        const memberInput = document.getElementById('memberInput')
+        // console.log(memberInput);
+        if (!memberInput.value.trim()) {
+            alert('Please input a member name')
+        } else {
+            memberArray.push(memberInput.value.trim())
+            console.log(memberArray);
+            memberInput.value = ''
+        }
+    }
+
+    function deleteLastMember() {
+        if (memberArray.length === 0) {
+            alert('There is no member to delete')
+        } else {
+            memberArray.pop()
+            console.log(memberArray);
+            alert('Last member has been deleted')
+        }
+    }
+
+    function deleteUser() {
+        const takeIndex = document.getElementById('takeIndex')
+        if (takeIndex.value.trim() === '') {
+            alert('Please fill in take index input')
+        } else {
+            if (memberArray.length <= +takeIndex.value.trim() || +takeIndex.value.trim() < 0) {
+                alert('There is no member on this index')
+            } else {
+                memberArray.splice(+takeIndex.value.trim(), 1)
+                console.log(memberArray);
+                alert(`Member on index ${takeIndex.value.trim()} has been deleted`)
+            }
+        }
+    }
+
+    let stringOne = 'Javascript'
+    let stringTwo = 'Javascript'
+
+    console.log(stringOne === stringTwo);
+
+    let arrOne = []
+    let arrTwo = []
+
+    console.log(arrOne === arrTwo);
+
+
+    let arr = new Array()
+    console.log(arr);
+    let arrs = []
+    console.log(typeof arrs);
+
+    let myString = 'Javascript is so fun'
+    console.log(myString[myString.length - 1]);
+
+    let arrOfNum = [1, 2, 3, 4, 5, 6, 7]
+    console.log(arrOfNum[0]);
+    console.log(arrOfNum[arrOfNum.length - 1]);
+
+    let arrOfString = ['Justin', 'Laide', 'Micheal', 'Deji', 'Quadri']
+    let arrOfBool = [true, false, true, false]
+    let arrOfArr = [[1, 2, 3, 4, 10, 11, 12], [5, 6, 7, 8]]
+    let insideArr = arrOfArr[0]
+    console.log(insideArr);
+    console.log(insideArr[2]);
+    console.log(arrOfArr[0][2]);
+
+    // Array Methods
+    let numArr = [1, 2, 3, 4, 5]
+    console.log(numArr.length);
+
+    // Includes
+    let incString = 'Javascript'
+    console.log(incString.includes('java'));
+
+    console.log(numArr.includes(1));
+
+    let newStrArr = ['Justin', 'Laide', 'Micheal', 'Deji', 'Quadri']
+    console.log(newStrArr.includes('Quadri'));
+
+    // Concat
+    let firstName = 'Adedeji'
+    let secondName = 'Adedotun'
+    console.log(firstName.concat(" ", secondName));
+    console.log(firstName + ' ' + secondName);
+
+
+    let newNum = [1, 2, 3, 4, 5]
+    let anoNum = [6, 7, 8, 9]
+    console.log(newNum.concat(anoNum));
+    // console.log(newNum + anoNum);
+
+    // slice
+    let newName = 'Marvelous'
+    console.log(newName.slice(3));
+
+    let slicedArr = [2, 3, 4, 1, 4, 1, 3, 5, 5, 2,]
+    console.log(slicedArr.slice(0, 5));
+
+    // Modifying arrays
+    let arrNum = [1, 2, 3, 4, 5, 6, 7]
+    console.log(arrNum);
+    arrNum[0] = 99
+    console.log(arrNum);
+
+    // let anyName = 'Javascript'
+    // console.log(anyName);
+    // anyName[0] = 'Y'
+    // console.log(anyName);
+
+    // Push 
+    let newestArr = [1, 2, 3, 4, 5]
+    console.log(newestArr);
+    newestArr.push(6, 7, 8)
+    console.log(newestArr);
+
+    // Pop
+    let popArr = [1, 2, 3, 4, 5, 6]
+    popArr.pop()
+    console.log(popArr);
+
+    // Unshift
+    let unshArr = [2, 3, 4, 5, 6, 7]
+    console.log(unshArr);
+    unshArr.unshift(1)
+    console.log(unshArr);
+
+    // Shift 
+    unshArr.shift()
+    console.log(unshArr);
+
+    // Splice
+    let spliceArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    spliceArr.splice(2, 4, 89)
+    console.log(spliceArr);
+
+    // sort 
+    let nameArr = ['Laide', 'Justin', 'Micheal', 'Anu', 'Emmanuel', 'Olamide', 'Maam Rekeebat', 'Kenny', 'Quadri', 'Ameen', 'Tunde', 'Gbotemi', 'Ayomide', 'Mr Benjamin', 'Kareem', 'Korede']
+    nameArr.sort()
+    console.log(nameArr);
+
+    let numArrTwo = [-2, 1, 1, 4, 3, 9, 7, 5, 8, 6, 10, 11, 15, 18, 20, 23, 25]
+    numArrTwo.sort((a, b) => a - b)
+    console.log(numArrTwo);
+
+    // Reverse 
+    // let numArrThree = [1, 1, 4, 3, 9, 7, 5, 8, 6, 10, 11, 15, 18, 20, 23, 25]
+    // numArrThree.sort((a, b) => a + b)
+    // console.log(numArrThree); 
+    numArrTwo.reverse()
+    console.log(numArrTwo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
