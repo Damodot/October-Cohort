@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <input type="text" id="todoInput">
+        <button onclick="addTask()">add Task</button>
+        <div id="show"></div>
+    </main>
+
+</body>
+
+</html>
+<script>
+    let serialNumber = 0
+    let show = document.getElementById('show')
+    let taskArr = []
+    serialNumber++
+    function addTask() {
+        let todoInput = document.getElementById('todoInput')
+        console.log(todoInput);
+        console.log(todoInput.value.trim());
+        if (todoInput.value.trim() === '') {
+            alert('The input string is mandatory')
+        } else {
+            alert('Task successfully added')
+            taskArr.push(todoInput.value.trim())
+            console.log(taskArr);
+            displayTodo()
+        }
+        todoInput.value = ''
+
+    }
+
+    function remove(i) {
+        console.log(i);
+        let confirmDelete = confirm('Are you sure you want to delete?')
+        if (confirmDelete) {
+            taskArr.splice(i, 1)
+            console.log(taskArr);
+            displayTodo()
+        }
+    }
+
+    function displayTodo() {
+        show.innerHTML = ''
+        for (let index = 0; index < taskArr.length; index++) {
+            const element = taskArr[index]
+            show.innerHTML += `<p>${index + 1}. ${element} <button onclick="edit()">Edit</button> <button onclick="remove(${index})">Delete</button></p>`
+        }
+    }
+
+</script>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" id="passwordInput">
+    <button onclick="showPassword()">Show Password</button>
+    <button onclick="sayName()">Say Name</button>
+</body>
+
+</html>
+
+<script>
+    function showPassword() {
+        let passwordInput = document.getElementById('passwordInput')
+        // if (passwordInput.type === 'password') {
+        //     passwordInput.type = 'text'
+        //     return
+        // }
+        // passwordInput.type = 'password'
+        passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password'
+    }
+    declarationFunc()
+    // Functions
+    // Global Scope 
+    let thisClass = 'Javascript'
+    // Functioon Scope
+    function sayName() {
+        let myName = 'Java'
+        var funcName = 'Function Scope'
+        console.log(thisClass);
+        function sayItOutLoud() {
+            console.log(thisClass);
+            let sayItLoud = 'Hey Guys'
+            console.log(myName);
+
+        }
+
+        console.log(sayItLoud);
+    }
+
+
+    // Block Scope
+    // for (let index = 0; index < 12; index++) {
+    //     var element = 12;
+    //     console.log(element);
+    //     console.log(index);
+    //     // console.log(index);
+    // }
+
+    // console.log(element);
+
+
+    // if (condition) {
+
+    // } else {
+
+    // }
+
+    // Create a carousel of images with a next and previous button
+    // Onclick on the next button, it should go to the next image 
+    // when youre on the last image, it should take you to the first image
+    // Onclick on the previous button, it should go to the previous image 
+    // when youre on the first image, it should take you to the last image 
+
+    // Function Declaration
+    // Function Expression
+    // Anonymous Function
+    // Arrow Function
+    // Functions returning a value
+    // Functions with one or more parameters 
+    // Callback functions
+    // SIFE 
+
+    console.log('Say Hello');
+
+    function SayHello() {
+        let myName = 'Adedeji'
+        console.log('Say Hello');
+        function sayHelloAgain() {
+            console.log(myName);
+        }
+        sayHelloAgain()
+    }
+    SayHello()
+
+    // Function Declaration
+    // declarationFunc()
+    function declarationFunc() {
+        console.log('I am a Function Declaration');
+    }
+    // declarationFunc()
+
+
+    var myName = 'Dotun'
+    console.log(myName);
+
+    // Function Expession and Anonymous Function
+    let fucExpression = function () {
+        console.log('This is a function Expression');
+    }
+    fucExpression()
+
+    // Arrow Function
+    let arrowFunc = () => {
+        console.log('This is an Arrow function');
+    }
+    arrowFunc()
+
+        // SIFE / IIFE, Self Invoking Function Expression, Immediately Invoked Function Expression
+        ; (function () {
+            console.log('This is a SIFE');
+        })();
+
+    function addNum(a) {
+        console.log(a + 40);
+    }
+    addNum(60)
+    addNum(180)
+
+    function addNumbers(a, b) {
+        console.log(a + b);
+    }
+
+    addNumbers(6, 7)
+
+    function addNew(name = "User") {
+        console.log(`Welcome ${name}`);
+    }
+    addNew('Dotun')
+
+    let thisClassname
+    function returnVal() {
+        let myName = 'Adedotun'
+        return 90
+        console.log("hello")
+    }
+
+    console.log(returnVal());
+
+
+    let username = 'gfdgh'
+    let password = '12345678'
+    let confPassword = '12345678'
+
+    function signIn() {
+        if (!username || !password || !confPassword) {
+            alert('All Fields are mandatory')
+            return
+        }
+        if (password.length < 8) {
+            alert('Password must be greater than 8')
+            return
+        }
+        if (password !== confPassword) {
+            alert('Password is not equal to confirm password')
+            return
+        }
+        alert('User Signed in successfully')
+    }
+
+    signIn()
+
+
+
+</script>
