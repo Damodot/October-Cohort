@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="username"> <br>
+    <input type="text" id="email"> <br>
+    <input type="text" id="password"> <br>
+    <input type="text" id="confPassword"> <br>
+    <button onclick="createAccount()">Create An Account</button>
+
+    <table>
+        <thead>
+            <tr>
+            <th>s/n</th>
+            <th>username</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    
+   
+</body>
+
+</html>
+<script>
+    let tb = document.getElementById('tbody')
+    let arrt = []
+    function createAccount() {
+        let username = document.getElementById('username')
+        let email = document.getElementById('email')
+        let password = document.getElementById('password')
+        let confPassword = document.getElementById('confPassword')
+        console.log(username, email, password, confPassword);
+        console.log(username.value, email.value, password.value, confPassword.value);
+        if (!username.value || !email.value || !password.value || !confPassword.value) {
+            alert('All feilds are Mandatory');
+            return
+        }
+        if (password.value.length <= 8) {
+            alert('your password should be greater than 8')
+            return
+        }
+        if (password.value !== confPassword.value) {
+            alert('The password does not match');
+            return
+        }
+        let user = {
+            name: username.value,
+            email: email.value,
+            password: password.value
+        }
+        arrt.push(user)
+        console.log(arrt);
+        for (let index = 0; index < arrt.length; index++) {
+            const element = arrt[index];
+            console.log(element);
+                      
+            
+        }
+        
+
+    }
+    //function clickMe(params) {
+    //  console.log(params);
+    //params.style.backgroundColor = 'red'
+    //}
+    let arr = ['Laide', 'Emma', 'justin']
+
+    let user = {
+        name: "Emmanuel",
+        gender: 'Male',
+        isMarried: true,
+        skills: ['HTML', 'CSS', 'Bootstrap', 'Javascript'],
+        age: 100,
+        "9Mobile": 5000,
+        school: {
+            department: [
+                {
+                    WebDev: ['HTML', 'CSS', 'JS']
+                }
+            ]
+        },
+        getFullName: function () {
+            return `My name is ${this.name} and i have these skills ${this.skills.slice(0, this.skills.length - 1).join(', ')} and ${this.skills[this.skills.length - 1]}`
+        }
+    }
+
+    // let string = {
+    //     slice: (param1, params2) => {
+
+    //     }
+    // }
+
+    // let stringName = 'Javascript'
+    // console.log(stringName.toUpperCase());
+    // stringName.slice(0, 1)
+
+    console.log(user);
+    console.log(user.getFullName());
+    console.log(user.skills[2]);
+    console.log(user.school.department[0].WebDev[2])
+    console.log(user.name);
+    console.log(user['name']);
+    console.log(user.isMarried);
+    console.log(user['9Mobile']);
+
+    let newArr = [1, 2, 3, 4, 5, 6]
+    newArr.push(7)
+    newArr[1] = 20
+
+    let newUser = {
+        username: 'Anu',
+        gender: 'Male',
+        isMarried: false
+    }
+
+    newUser.username = 'Anuoluwapo'
+    newUser.skills = ['Django', 'React Native', 'Electron Js']
+    newUser.skills.push('Next Js')
+    console.log(newUser);
+
+
+
+</script>

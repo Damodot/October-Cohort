@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Coding Quiz</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background: white;
+            width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #444;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-family: "Courier New", monospace;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: none;
+            background: #fafafa;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>JavaScript Coding Quiz</h1>
+        <div id="quiz">
+            <div id="question" class="question"></div>
+            <pre id="instructions"></pre>
+            <div class="btn-group">
+                <button id="runBtn">Run Code</button>
+                <button id="nextBtn">Next Question</button>
+            </div>
+            <div id="feedback"></div>
+        </div>
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script>
+        // ✏️ EDIT YOUR QUESTIONS HERE
+        const questions = [
+            {
+                title: "Question 1: Add Two Numbers",
+                instructions: "Write a function add(a, b) that returns the sum of a and b.\nExample: add(2, 3) ➜ 5",
+                test: () => {
+                    try {
+                        return add(2, 3) === 5 && add(-1, 1) === 0;
+                    } catch (e) {
+                        return false;
+                    }
+                },
+            },
+            {
+                title: "Question 2: Reverse a String",
+                instructions: "Write a function reverseStr(str) that reverses any given string.\nExample: reverseStr('hello') ➜ 'olleh'",
+                test: () => {
+                    try {
+                        return reverseStr("hello") === "olleh" && reverseStr("abc") === "cba";
+                    } catch (e) {
+                        return false;
+                    }
+                },
+            },
+            {
+                title: "Question 3: Find the Largest Number",
+                instructions: "Write a function largest(arr) that returns the largest number in an array.\nExample: largest([2, 8, 4]) ➜ 8",
+                test: () => {
+                    try {
+                        return largest([2, 8, 4]) === 8 && largest([-1, -5, -3]) === -1;
+                    } catch (e) {
+                        return false;
+                    }
+                },
+            },
+            {
+                title: "Question 4: Random RGB Generator",
+                instructions: "Write a function that generates a random rgb color everytime and assign it to the body background color.\nExample: randomRGB() ➜ 'rgb(255, 123, 67)'",
+                test: () => {
+                    try {
+                        const randomColor = randomRGB();
+                        document.body.style.backgroundColor = randomColor;
+                        return randomColor.startsWith("rgb(");
+                    } catch (e) {
+                        return false;
+                    }
+                },
+            },
+            {
+                title: "Question 4: Random RGB Generator",
+                instructions: "Write a function that checks if a string is a Palindrome \n Example \n checkPalindrome('madam') -> madam is a palindrome \n checkPalindrome('hello') -> hello is not a palindrome",
+                test: () => {
+                    try {
+                        const string = 'level';
+                        return `${strig} is a palindrome`;
+                    } catch (e) {
+                        return false;
+                    }
+                },
+            }
+        ];
+
+        // ⚙️ QUIZ LOGIC
+        let current = 0;
+        let score = 0;
+
+        const questionEl = document.getElementById("question");
+        const instructionsEl = document.getElementById("instructions");
+        const codeEl = document.getElementById("code");
+        const feedbackEl = document.getElementById("feedback");
+        const resultEl = document.getElementById("result");
+        const nextBtn = document.getElementById("nextBtn");
+        const runBtn = document.getElementById("runBtn");
+
+        function loadQuestion() {
+            const q = questions[current];
+            questionEl.textContent = q.title;
+            instructionsEl.textContent = q.instructions;
+            codeEl.value = "";
+            feedbackEl.textContent = "";
+            feedbackEl.className = "";
+        }
+
+        runBtn.addEventListener("click", () => {
+            const code = codeEl.value;
+            try {
+                // Evaluate student’s code safely
+                const safeCode = `"use strict"; ${code}`;
+                new Function(safeCode)();
+
+                const passed = questions[current].test();
+                if (passed) {
+                    feedbackEl.textContent = "✅ Correct!";
+                    feedbackEl.className = "correct";
+                    score++;
+                } else {
+                    feedbackEl.textContent = "❌ Incorrect output. Try again!";
+                    feedbackEl.className = "incorrect";
+                }
+            } catch (err) {
+                feedbackEl.textContent = "⚠️ Error: " + err.message;
+                feedbackEl.className = "incorrect";
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            current++;
+            if (current < questions.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        });
+
+        function showResult() {
+            document.getElementById("quiz").classList.add("hidden");
+            resultEl.classList.remove("hidden");
+            resultEl.innerHTML = `
+        <h2>Quiz Completed 🎉</h2>
+        <p>You got ${score} out of ${questions.length} correct.</p>
+        <button onclick="restartQuiz()">Restart</button>
+      `;
+        }
+
+        function restartQuiz() {
+            current = 0;
+            score = 0;
+            resultEl.classList.add("hidden");
+            document.getElementById("quiz").classList.remove("hidden");
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>

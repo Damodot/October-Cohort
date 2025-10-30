@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function add(a, b) {
+        return a + b
+    }
+
+    // hello
+    // [0, l, l, e, h]
+    function reverseStr(params) {
+        // let turnToArr = params.split('')
+        // console.log(turnToArr);
+        // let reverseArr = turnToArr.reverse()
+        // console.log(reverseArr);
+        // let reverseStr = reverseArr.join("")
+        // console.log(reverseStr);
+        return params.split('').reverse().join('')
+    }
+    console.log(reverseStr('hello'));
+
+
+
+    function sortArr(params) {
+        params.sort((a, b) => a - b )
+        console.log(params[params.length - 1]);
+    }
+    sortArr([1, 91, 18, 2, 15])
+
+    function randomRGB(params) {
+        var y = Math.round(Math.random()*256)
+        var u = Math.round(Math.random()*256)
+        var z = Math.round(Math.random()*256)
+        document.body.style.backgroundColor = `rgb(${y}, ${u}, ${z})`
+        return `rgb(${y}, ${u}, ${z})`
+    }
+    console.log(randomRGB());
+
+    // madam
+    // [m, a, d, a, m]
+    // [m, a, d, a, m]
+    // 
+    function checkPalidrome(str) {
+        let reverse = str.split('').reverse().join('');
+        console.log(str);
+        str === reverse
+        if (str === reverse) {
+            console.log(`${str} is a palindrome`);
+        } else {
+            console.log(`${str} is not a palindrome`);
+        }
+        
+    }
+
+    checkPalidrome('madam')
+</script>
